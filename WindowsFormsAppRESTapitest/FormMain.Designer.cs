@@ -44,6 +44,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -139,6 +140,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.button5);
@@ -147,7 +149,7 @@
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Location = new System.Drawing.Point(809, 59);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(403, 404);
+            this.groupBox3.Size = new System.Drawing.Size(506, 404);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "API-anrop";
@@ -156,7 +158,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(6, 43);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(381, 22);
+            this.textBox2.Size = new System.Drawing.Size(500, 22);
             this.textBox2.TabIndex = 0;
             this.textBox2.Text = "http://api.scb.se/OV0104/v1/doris/sv/ssd/START/BE/BE0101/BE0101A/FolkmangdTatort";
             // 
@@ -171,47 +173,56 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(10, 84);
+            this.textBox3.Location = new System.Drawing.Point(10, 90);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(377, 252);
+            this.textBox3.Size = new System.Drawing.Size(490, 246);
             this.textBox3.TabIndex = 2;
             // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(10, 343);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 23);
+            this.button5.Size = new System.Drawing.Size(121, 23);
             this.button5.TabIndex = 3;
-            this.button5.Text = "Läs in";
+            this.button5.Text = "Läs in från API";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(126, 343);
+            this.button6.Location = new System.Drawing.Point(168, 342);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(202, 23);
             this.button6.TabIndex = 4;
-            this.button6.Text = "Hämta info om tabellen";
+            this.button6.Text = "1. Hämta info om tabellen";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(28, 375);
+            this.button7.Location = new System.Drawing.Point(168, 372);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(196, 23);
+            this.button7.Size = new System.Drawing.Size(277, 23);
             this.button7.TabIndex = 5;
-            this.button7.Text = "ladda test api";
+            this.button7.Text = "Ladda in min test JSON fråga";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "JSON fråga";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1317, 628);
+            this.ClientSize = new System.Drawing.Size(1317, 472);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
@@ -219,7 +230,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormMain";
-            this.Text = "FormMain";
+            this.Text = "Läs in från SCB´s API";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -248,5 +259,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label3;
     }
 }

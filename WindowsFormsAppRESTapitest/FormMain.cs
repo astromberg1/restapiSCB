@@ -155,7 +155,6 @@ namespace WindowsFormsAppRESTapitest
             if (response.IsSuccessStatusCode)
             {
                 // Parse the response body. Blocking!
-                var dataObjects = response.Content;
                 var dataString = response.Content.ReadAsStringAsync().Result;
                 List<Scbdata> dataut = JsonConvert.DeserializeObject<List<Scbdata>>(dataString.ToString());
                 listBox1.Items.Clear();
