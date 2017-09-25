@@ -16,6 +16,7 @@ namespace WindowsFormsAppRESTapitest
 {
     public partial class FormMain : Form
     {
+        public Dictionary<string, string> infodictionary = new Dictionary<string, string>();
         public List<Infoobject> infolista = new List<Infoobject>();
 
         public FormMain()
@@ -176,5 +177,82 @@ namespace WindowsFormsAppRESTapitest
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            HttpClient client = new HttpClient();
+
+
+
+            string json1 = textBox3.Text;
+            string json = json1.Replace("px", "json");
+
+            StringContent queryString = new StringContent(json);
+            var url1 = new Uri(textBox2.Text);
+
+
+            var response1 = client.PostAsync(url1, queryString).Result;
+            var responseBody = response1.Content.ReadAsStringAsync();
+            var res = responseBody.Result;
+
+            var resobject = JsonConvert.DeserializeObject<Res2Object>(res);
+
+            listBox1.Items.Clear();
+            textBox1.Text = resobject.columns[0].text + resobject.columns[0].code + Environment.NewLine +
+                            resobject.columns[1].text + resobject.columns[1].code + Environment.NewLine +
+                            resobject.columns[2].text + resobject.columns[2].code + Environment.NewLine;
+
+            foreach (var item in resobject.data)
+            {
+                if (item.key.Count == 1)
+                    listBox1.Items.Add(item.key[0] + " " + item.values[0]);
+                else
+                {
+                    if (item.key.Count == 2)
+                    {
+                        listBox1.Items.Add(item.key[0] + " " + item.key[1] + " " + item.values[0]);
+
+                    }
+
+
+                }
+
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            var url1 = new Uri(textBox2.Text);
+            var response1 = client.GetAsync(url1).Result;
+            var responseBody = response1.Content.ReadAsStringAsync();
+            var res = responseBody.Result;
+
+            var resobject = JsonConvert.DeserializeObject<GetResObject>(res);
+
+            listBox1.Items.Clear();
+            textBox1.Text = resobject.title[0].ToString() + Environment.NewLine +
+                            resobject.title[1] + Environment.NewLine;
+
+            var list = resobject.variables.FirstOrDefault().valueTexts;
+            var list2 = resobject.variables.FirstOrDefault().values;
+            int i = -1;
+            foreach (var item in list)
+            {
+                i++;
+                infodictionary.Add(item,list2[i]);
+                listBox1.Items.Add(item + "   " +list2[i]);
+
+
+            }
+
+
+
+
+
+
+
+                }
+            }
     }
-}
+
