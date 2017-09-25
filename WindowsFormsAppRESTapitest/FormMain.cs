@@ -98,7 +98,6 @@ namespace WindowsFormsAppRESTapitest
                 }
             }";
 
-
             StringContent queryString = new StringContent(json3);
 
             var url2 = new Uri("http://api.scb.se/OV0104/v1/doris/sv/ssd/START/PR/PR0101/PR0101A/KPIFastM2");
@@ -115,8 +114,6 @@ namespace WindowsFormsAppRESTapitest
             {
                 listBox1.Items.Add(item.key[0] + " " + item.values[0]);
             }
-
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -144,12 +141,12 @@ namespace WindowsFormsAppRESTapitest
             }
 
         }
-
+        /// <summary>
+        /// Event_procedure för att hämta meta data för tabeller nivå 1
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
-        {
-
+        {           
             HttpClient client = new HttpClient();
-
             // List data response.
             var response = client.GetAsync("http://api.scb.se/OV0104/v1/doris/sv/ssd/").Result; // Blocking call!
             if (response.IsSuccessStatusCode)
@@ -164,7 +161,6 @@ namespace WindowsFormsAppRESTapitest
                     listBox1.Items.Add(item.id + " " + item.text + " " + item.type);
 
                 }
-
             }
             else
             {
@@ -232,7 +228,7 @@ namespace WindowsFormsAppRESTapitest
             var resobject = JsonConvert.DeserializeObject<GetResObject>(res);
 
             listBox1.Items.Clear();
-            textBox1.Text = resobject.title[0].ToString() + Environment.NewLine +
+            textBox1.Text = resobject.title[0] + Environment.NewLine +
                             resobject.title[1] + Environment.NewLine;
 
             var list = resobject.variables.FirstOrDefault().valueTexts;

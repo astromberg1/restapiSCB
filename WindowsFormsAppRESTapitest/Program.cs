@@ -153,6 +153,7 @@ namespace WindowsFormsAppRESTapitest
         public List<string> values { get; set; }
     }
 
+
     public class Res2Object
     {
         public List<Column> columns { get; set; }
@@ -166,13 +167,9 @@ namespace WindowsFormsAppRESTapitest
 
     public class Scbdata
     {
-
         public string id { get; set; }
         public string type { get; set; }
-
         public string text { get; set; }
-
-
     }
 
 
