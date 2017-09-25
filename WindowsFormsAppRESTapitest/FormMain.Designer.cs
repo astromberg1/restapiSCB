@@ -43,6 +43,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -115,7 +116,7 @@
             this.textBox1.Location = new System.Drawing.Point(238, 59);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 76);
+            this.textBox1.Size = new System.Drawing.Size(556, 76);
             this.textBox1.TabIndex = 2;
             // 
             // listBox1
@@ -124,7 +125,7 @@
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(238, 149);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(281, 244);
+            this.listBox1.Size = new System.Drawing.Size(556, 244);
             this.listBox1.TabIndex = 3;
             // 
             // label1
@@ -138,12 +139,13 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.textBox3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Location = new System.Drawing.Point(544, 50);
+            this.groupBox3.Location = new System.Drawing.Point(809, 59);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(403, 404);
             this.groupBox3.TabIndex = 5;
@@ -179,7 +181,7 @@
             // 
             this.button5.Location = new System.Drawing.Point(10, 343);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(94, 23);
             this.button5.TabIndex = 3;
             this.button5.Text = "Läs in";
             this.button5.UseVisualStyleBackColor = true;
@@ -187,13 +189,23 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(110, 343);
+            this.button6.Location = new System.Drawing.Point(126, 343);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(202, 23);
             this.button6.TabIndex = 4;
             this.button6.Text = "Hämta info om tabellen";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(28, 375);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(196, 23);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "ladda test api";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // FormMain
             // 
@@ -235,5 +247,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button7;
     }
 }
